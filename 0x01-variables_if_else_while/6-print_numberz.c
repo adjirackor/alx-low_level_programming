@@ -2,9 +2,7 @@
 /**
  * main - Prints out single digits
  *
- * Description: Main function prints out all single digit numbers of base 10.
- *
- * return:0123456789
+ * Return: 0 (Success)
  */
 
 int main(void)
