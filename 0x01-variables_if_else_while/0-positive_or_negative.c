@@ -4,8 +4,9 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
-/*
+/**
  * main - entry step
+ *
  * Return: 0 (Success)
  */
 int main(void)
