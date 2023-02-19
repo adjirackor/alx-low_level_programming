@@ -4,11 +4,11 @@
  * main - entry point
  *
  * Return: 0 (Success)
- */
+  */
 
 int main(void)
 {
-	int c=0;
+	int c = 0;
 	int f_d;
 	int l_d;
 
@@ -24,7 +24,7 @@ int main(void)
 
 		while (c2 <= 99)
 		{
-			f_d2 = (c2 /10 + '0');
+			f_d2 = (c2 / 10 + '0');
 			l_d2 = (c2 % 10 + '0');
 
 			if (c < c2)
@@ -35,7 +35,7 @@ int main(void)
 				putchar(f_d2);
 				putchar(l_d2);
 
-				if (c !=98)
+				if (c != 98)
 				{
 					putchar(',');
 					putchar(' ');
@@ -48,7 +48,3 @@ int main(void)
 	putchar(10);
 	return (0);
 }
-
-
-
-
