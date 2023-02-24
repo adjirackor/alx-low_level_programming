@@ -12,15 +12,15 @@ int main(void)
 	x = 100;
 	for (y = 1; y <= x; y++)
 	{
+		/* for multiples of 15 */
+		if ((y % 15) == 0)
+			printf("FizzBuzz");
 		/* for multiples of 3 */
-		if ((y % 3) == 0)
+		else if ((y % 3) == 0)
 			printf("Fizz");
 		/* for multiples of 5 */
 		else if ((y % 5) == 0)
 			printf("Buzz");
-		/* for multiples of 15 */
-		else if ((y % 15) == 0)
-			printf("FizzBuzz");
 		else
 			printf("%d", y);
 		if (y != 100)
