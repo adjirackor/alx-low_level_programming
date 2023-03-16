@@ -26,14 +26,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	slen1 = _strlen(s1);
 	slen2 = _strlen(s2);
-	stotal = slen1 + slen2;
 
 	if (n >= slen2)
 	{
-		n = slen2;
+		stotal = slen1 + slen2;
+	}
+	else
+	{
+		stotal = slen1 + n;
 	}
 
-	concat_str = (char *)malloc(slen1 + n + 1);
+	concat_str = (char *)malloc(stotal + 1);
 
 	if (concat_str == NULL)
 		return (NULL);
