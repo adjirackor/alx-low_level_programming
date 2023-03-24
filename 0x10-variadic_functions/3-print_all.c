@@ -9,30 +9,24 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	const char *y = format;
-	char chr;
-	int int1;
-	float flt;
 	char *str;
 	char *separator = "";
 
 	va_start(list, format);
-	if(*y)
+	if (*y)
 	{
 		while (*y)
 		{
 			switch (*y)
 			{
 				case  'c':
-					chr = va_arg(list, int);
-					printf("%s%c", separator, chr);
+					printf("%s%c", separator, va_arg(list, int));
 					break;
 				case 'i':
-					int1 = va_arg(list, int);
-					printf("%s%d", separator, int1);
+					printf("%s%d", separator, va_arg(list, int));
 					break;
 				case 'f':
-					flt = va_arg(list, double);
-					printf("%s%f", separator, flt);
+					printf("%s%f", separator, va_arg(list, double));
 					break;
 				case 's':
 					str = va_arg(list, char *);
@@ -43,11 +37,10 @@ void print_all(const char * const format, ...)
 				default:
 					y++;
 					continue;
-			}	
+			}
 			separator = ", ";
 			y++;
 		}
-		
 	}
 	va_end(list);
 	printf("\n");
