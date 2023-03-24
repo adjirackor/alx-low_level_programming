@@ -16,33 +16,38 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 
 	va_start(list, format);
-
-	while (*y)
+	if(*y)
 	{
-		if (*y == 'c')
+		while (*y)
 		{
-			chr = va_arg(list, int);
-			printf("%s%c", separator, chr);
+			switch (*y)
+			{
+				case  'c':
+					chr = va_arg(list, int);
+					printf("%s%c", separator, chr);
+					break;
+				case 'i':
+					int1 = va_arg(list, int);
+					printf("%s%d", separator, int1);
+					break;
+				case 'f':
+					flt = va_arg(list, double);
+					printf("%s%f", separator, flt);
+					break;
+				case 's':
+					str = va_arg(list, char *);
+					if (!str)
+						str = ("(nil)");
+					printf("%s%s", separator, str);
+					break;
+				default:
+					y++;
+					continue;
+			}	
+			separator = ", ";
+			y++;
 		}
-		else if (*y == 'i')
-		{
-			int1 = va_arg(list, int);
-			printf("%s%d", separator, int1);
-		}
-		else if (*y == 'f')
-		{
-			flt = va_arg(list, double);
-			printf("%s%f", separator, flt);
-		}
-		else if (*y == 's')
-		{
-			str = va_arg(list, char *);
-			if (!str)
-				str = ("(nil)");
-			printf("%s%s", separator, str);
-		}
-		separator = ", ";
-		y++;
+		
 	}
 	va_end(list);
 	printf("\n");
