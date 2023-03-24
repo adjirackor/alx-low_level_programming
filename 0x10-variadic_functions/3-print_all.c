@@ -37,10 +37,9 @@ void print_all(const char * const format, ...)
 		else if (*y == 's')
 		{
 			str = va_arg(list, char *);
-			if (str == NULL)
-				printf("(nil)");
-			else
-				printf("%s%s", separator, str);
+			if (!str)
+				str = ("(nil)");
+			printf("%s%s", separator, str);
 		}
 		separator = ", ";
 		y++;
