@@ -8,18 +8,18 @@
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	const char *y = format;
+	int i = 0;
 	char *str;
 	char *separator = "";
 
 	va_start(list, format);
-	if (*y)
+	if (format)
 	{
-		while (*y)
+		while (format[i])
 		{
-			switch (*y)
+			switch (format[i])
 			{
-				case  'c':
+				case 'c':
 					printf("%s%c", separator, va_arg(list, int));
 					break;
 				case 'i':
@@ -35,13 +35,14 @@ void print_all(const char * const format, ...)
 					printf("%s%s", separator, str);
 					break;
 				default:
-					y++;
+					i++;
 					continue;
 			}
 			separator = ", ";
-			y++;
+			i++;
 		}
 	}
-	va_end(list);
 	printf("\n");
+
+	va_end(list);
 }
