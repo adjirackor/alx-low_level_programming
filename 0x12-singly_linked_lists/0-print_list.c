@@ -1,10 +1,9 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 /**
- * print_list - prints all the elements of a list 
- * @h: pointer to the head of the list 
+ * print_list - prints all the elements of a list
+ * @h: pointer to the head of the list
  *
  * Return: the number of nodes in the list
  */
