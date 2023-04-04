@@ -8,7 +8,7 @@
 
 void free_listint(listint_t *head)
 {
-	listint_t *new_node = malloc(sizeof(listint_t));
+	listint_t *new_node;
 
 	while (head != NULL)
 	{
@@ -16,3 +16,4 @@ void free_listint(listint_t *head)
 		head = head->next;
 		free(new_node);
 	}
+}
